@@ -1,0 +1,76 @@
+.calendar {
+  width: 330px;
+  height: 300px;
+  background-color: #fff;
+  position: absolute;
+  top: 80%;
+  left: 7.6%;
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+
+  &.film_page {
+    top: 15%;
+    left: 27%;
+  }
+
+  & .calendar__head {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+  }
+
+  & .date {
+    user-select: none;
+    font-size: 22px;
+  }
+
+  .arrow {
+    user-select: none;
+    width: 20px;
+    height: 20px;
+    fill: #80739b;
+    cursor: pointer;
+    transition: fill 0.1s solid;
+    align-self: center;
+
+    &:hover {
+      fill: #f64747;
+    }
+
+    &.left {
+      transform: rotate(180deg);
+    }
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  .calendar__days {
+    display: flex;
+    flex-wrap: wrap;
+    .day {
+      user-select: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #a46fdd;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      margin: 0 0 10px 10px;
+      cursor: pointer;
+      &.notEnabled {
+        pointer-events: none;
+        opacity: 0.5;
+      }
+      &.active,
+      &:hover {
+        color: #fff;
+        background-color: #a46fdd;
+      }
+    }
+  }
+}

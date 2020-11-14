@@ -1,0 +1,302 @@
+.cover-screen {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(25, 7, 44, 0.9);
+  z-index: 9999;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    font-size: 25px;
+    color: #c2c2c2;
+    opacity: 1;
+  }
+
+  .button {
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 15px;
+    color: #c2c2c2;
+    background-color: #69196b;
+    opacity: 1;
+    user-select: none;
+
+    &:hover {
+      box-shadow: 1px 0px 8px 3px rgba(244, 249, 253, 0.2);
+    }
+  }
+
+  &.active {
+    visibility: visible;
+  }
+}
+
+.modal {
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    margin-top: 20px;
+    z-index: 1;
+  }
+
+  &__info {
+    color: #c2c2c2;
+  }
+
+  &__film-name {
+    font-size: 30px;
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  &__rating {
+    font-size: 25px;
+    border: 2px solid #c2c2c2;
+    color: #c2c2c2;
+    font-weight: 600;
+    display: inline-block;
+    border-radius: 5px;
+  }
+
+  &__genres {
+    display: flex;
+    list-style: none;
+    .genres__item {
+      font-size: 20px;
+      margin: 20px 20px 0 0;
+    }
+  }
+
+  &__date {
+    align-self: flex-start;
+    color: #c2c2c2;
+    font-size: 25px;
+    margin-bottom: 10px;
+    .date {
+      user-select: none;
+      border-bottom: 1px dashed #c2c2c2;
+      cursor: pointer;
+    }
+  }
+
+  &__time {
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+
+    .time__item {
+      height: 35px;
+      user-select: none;
+      margin: 0 0 10px 10px;
+      border: 3px solid #c2c2c2;
+      border-radius: 5px;
+      padding: 5px;
+      color: #c2c2c2;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+
+      &.active {
+        background-color: #c2c2c2;
+        color: #69196b;
+      }
+    }
+  }
+
+  &__main {
+    min-height: 350px;
+    padding-top: 30px;
+
+    span {
+      font-size: 25px;
+      color: #c2c2c2;
+    }
+
+    .modal__places-list {
+      width: 55%;
+      display: flex;
+      font-size: 20px;
+      margin: 0 auto;
+      margin-top: 30px;
+      .row-list {
+        display: flex;
+        flex-direction: column;
+        color: #c2c2c2;
+
+        .row-number {
+          user-select: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 35px;
+          height: 35px;
+          margin-bottom: 10px;
+        }
+      }
+
+      .places-list {
+        display: flex;
+        flex-direction: column;
+
+        .row {
+          display: flex;
+          justify-content: space-between;
+          width: 500px;
+
+          .place {
+            user-select: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 35px;
+            height: 35px;
+            border: 1px solid #c2c2c2;
+            border-radius: 3px;
+            color: #c2c2c2;
+            margin-bottom: 10px;
+
+            &.active,
+            &:hover {
+              box-shadow: 1px 0px 8px 3px rgba(244, 249, 253, 0.2);
+              cursor: pointer;
+              background-color: #c2c2c2;
+              color: #69196b;
+            }
+
+            &.occupied {
+              background-color: #69196b;
+              pointer-events: none;
+            }
+          }
+        }
+      }
+    }
+
+    &__choose-time {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 100px auto 0 auto;
+
+      h1 {
+        color: #c2c2c2;
+        font-size: 30px;
+      }
+    }
+  }
+
+  &__footer {
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+
+    .ticket-price {
+      color: #c2c2c2;
+      font-size: 18px;
+    }
+
+    .ticket-info {
+      display: flex;
+      align-items: center;
+
+      span {
+        user-select: none;
+        color: #c2c2c2;
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      .price {
+        margin-right: 30px;
+      }
+
+      .place-quantity {
+        position: relative;
+
+        span {
+          cursor: pointer;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .tickets-list {
+          visibility: hidden;
+          position: absolute;
+          width: 350px;
+          height: 305px;
+          top: -24em;
+          left: -6em;
+          padding: 10px;
+          border-radius: 5px;
+          background-color: #fff;
+          font-size: 13px;
+
+          .choose-tickets {
+            margin: 125px auto 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+          }
+
+          &.active {
+            visibility: visible;
+          }
+
+          & .ticket-item:first-child {
+            border-top: none;
+          }
+
+          .ticket-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border-top: 1px solid #c2c2c2;
+
+            .row,
+            .date {
+              margin-bottom: 5px;
+            }
+
+            .cross {
+              width: 15px;
+              height: 15px;
+              cursor: pointer;
+              justify-self: flex-start;
+            }
+          }
+        }
+      }
+
+      .buy {
+        user-select: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        background-color: #c2c2c2;
+        color: #69196b;
+        width: 130px;
+        height: 40px;
+        margin-left: 40px;
+        font-size: 20px;
+        border-radius: 3px;
+        font-weight: 600;
+
+        &:hover {
+          border: 5px solid #042d41;
+        }
+      }
+    }
+  }
+}

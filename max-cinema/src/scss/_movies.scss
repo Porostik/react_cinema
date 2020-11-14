@@ -1,0 +1,50 @@
+.movies {
+  margin-top: 40px;
+  display: flex;
+  align-content: space-between;
+  flex-wrap: wrap;
+  img {
+    width: 200px;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+
+  .movie-info__name {
+    font-size: 25px;
+    font-weight: 300;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 25%;
+    color: #c6cad8;
+    text-decoration: none;
+  }
+}
+
+.movie-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 200px;
+  margin-bottom: 25px;
+
+  &__age-rating {
+    display: inline-block;
+    align-self: flex-start;
+    margin: 10px 10px 0 0;
+    border-radius: 5px;
+    border: 1px solid #d5d7e0;
+    padding: 1px;
+  }
+
+  &__genre {
+    flex-grow: 1;
+    margin: 10px 0 0 0;
+    font-size: 17px;
+    text-transform: lowercase;
+  }
+}

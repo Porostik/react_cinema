@@ -1,0 +1,47 @@
+.main-content__content {
+  position: relative;
+  background-color: #19072c;
+  padding: 25px;
+  font-family: 'Fira Sans', sans-serif;
+
+  .main-content__filter-bar {
+    position: relative;
+    border-radius: 10px;
+    background-color: #141822;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .date__input {
+      height: 50px;
+      border-radius: 10px;
+      border: none;
+      padding: 0 20px;
+      background: url(../img/date-icon.png) no-repeat;
+      background-color: #fff;
+      background-position: right 20px top 50%;
+      color: #343b4c;
+      font-size: 23px;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .genre__block {
+      color: #fff;
+      font-weight: 300;
+      font-size: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      width: 400px;
+
+      .genre__box {
+        margin-bottom: 5px;
+        label {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
